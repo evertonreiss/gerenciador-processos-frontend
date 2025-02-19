@@ -12,7 +12,7 @@
 const { configure } = require('quasar/wrappers');
 
 
-module.exports = configure(function (/* ctx */) {
+module.exports = configure(function(/* ctx */) {
   return {
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -21,8 +21,7 @@ module.exports = configure(function (/* ctx */) {
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-vite/boot-files
     boot: [
-
-      'axios',
+      'axios'
     ],
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#css
@@ -34,20 +33,20 @@ module.exports = configure(function (/* ctx */) {
     extras: [
       // 'ionicons-v4',
       // 'mdi-v7',
-      // 'fontawesome-v6',
+      'fontawesome-v6',
       // 'eva-icons',
       // 'themify',
       // 'line-awesome',
       // 'roboto-font-latin-ext', // this or either 'roboto-font', NEVER both!
 
       'roboto-font', // optional, you are not bound to it
-      'material-icons', // optional, you are not bound to it
+      'material-icons' // optional, you are not bound to it
     ],
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build
     build: {
       target: {
-        browser: [ 'es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1' ],
+        browser: ['es2019', 'edge88', 'firefox78', 'chrome87', 'safari13.1'],
         node: 'node20'
       },
 
@@ -60,7 +59,7 @@ module.exports = configure(function (/* ctx */) {
 
       // publicPath: '/',
       // analyze: true,
-      // env: {},
+      env: require('dotenv').config().parsed,
       // rawDefine: {}
       // ignorePublicFolder: true,
       // minify: false,
@@ -85,7 +84,21 @@ module.exports = configure(function (/* ctx */) {
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
       // https: true
-      open: true // opens browser window automatically
+      port: process.env.VITE_APP_PORT,
+      open: true, // opens browser window automatically
+      proxy: {
+        '/processo-service': {
+          target: process.env.VITE_PROCESSO_SERVICE_BASE_URL,
+          changeOrigin: true,
+          rewrite: (path) => path.replace('/processo-service', '')
+        },
+        '/cadastro-service': {
+          target: process.env.VITE_CADASTRO_SERVICE_BASE_URL,
+          changeOrigin: true,
+          rewrite: (path) => path.replace('/cadastro-service', '')
+        }
+      }
+
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
@@ -103,7 +116,7 @@ module.exports = configure(function (/* ctx */) {
       // directives: [],
 
       // Quasar plugins
-      plugins: ['Notify']
+      plugins: ['Notify', 'Dialog']
     },
 
     // animations: 'all', // --- includes all animations
@@ -125,7 +138,7 @@ module.exports = configure(function (/* ctx */) {
     // https://v2.quasar.dev/quasar-cli-vite/developing-ssr/configuring-ssr
     ssr: {
       // ssrPwaHtmlFilename: 'offline.html', // do NOT use index.html as name!
-                                          // will mess up SSR
+      // will mess up SSR
 
       // extendSSRWebserverConf (esbuildConf) {},
       // extendPackageJson (json) {},
@@ -149,7 +162,7 @@ module.exports = configure(function (/* ctx */) {
       injectPwaMetaTags: true,
       swFilename: 'sw.js',
       manifestFilename: 'manifest.json',
-      useCredentialsForManifestTag: false,
+      useCredentialsForManifestTag: false
       // useFilenameHashes: true,
       // extendGenerateSWOptions (cfg) {}
       // extendInjectManifestOptions (cfg) {},
@@ -200,10 +213,10 @@ module.exports = configure(function (/* ctx */) {
     bex: {
       contentScripts: [
         'my-content-script'
-      ],
+      ]
 
       // extendBexScriptsConf (esbuildConf) {}
       // extendBexManifestJson (json) {}
     }
-  }
+  };
 });
