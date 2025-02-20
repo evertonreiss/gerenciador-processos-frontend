@@ -1,29 +1,18 @@
 <template>
-  <div class="fullscreen bg-blue text-white text-center q-pa-md flex flex-center">
-    <div>
-      <div style="font-size: 30vh">
-        404
-      </div>
-
-      <div class="text-h2" style="opacity:.4">
-        Oops. Nothing here...
-      </div>
-
+  <q-page class="flex flex-center q-pa-md">
+    <q-card class="text-center q-pa-lg full-width full-height  vertical-top">
+      <q-icon name="error_outline" size="100px" color="negative" />
+      <h1 class="text-h4">404 - Página Não Encontrada</h1>
+      <p class="text-subtitle1">
+        Opa! Parece que você tentou acessar uma página que não existe.
+      </p>
       <q-btn
-        class="q-mt-xl"
-        color="white"
-        text-color="blue"
-        unelevated
+        label="Voltar para o início"
+        color="primary"
+        class="q-mt-md"
         to="/"
-        label="Go Home"
-        no-caps
       />
-    </div>
-  </div>
+    </q-card>
+  </q-page>
 </template>
 
-<script setup lang="ts">
-defineOptions({
-  name: 'ErrorNotFound'
-});
-</script>

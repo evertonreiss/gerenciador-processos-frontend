@@ -1,47 +1,22 @@
 <template>
-  <q-page class="row items-center justify-evenly">
-    <example-component
-      title="Example component"
-      active
-      :todos="todos"
-      :meta="meta"
-    ></example-component>
+  <q-page class="q-pa-lg">
+    <div class="row" style="display: flex; gap: 20px">
+      <q-btn
+        v-for="link in menuDashboard"
+        :key="link.name"
+        :icon="link.icon"
+        :label="link.title"
+        :to="link.link"
+        color="white"
+        text-color="primary"
+        class="rounded col-xl-1 col-lg-2 col-md-3 col-12 text-body1 text-bold"
+        style="height: 120px; min-width: 280px"
+      />
+    </div>
+
   </q-page>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-import { Todo, Meta } from 'components/models';
-import ExampleComponent from 'components/ExampleComponent.vue';
-
-defineOptions({
-  name: 'IndexPage'
-});
-
-const todos = ref<Todo[]>([
-  {
-    id: 1,
-    content: 'ct1'
-  },
-  {
-    id: 2,
-    content: 'ct2'
-  },
-  {
-    id: 3,
-    content: 'ct3'
-  },
-  {
-    id: 4,
-    content: 'ct4'
-  },
-  {
-    id: 5,
-    content: 'ct5'
-  }
-]);
-
-const meta = ref<Meta>({
-  totalCount: 1200
-});
+import { menuDashboard } from 'src/utils/menu';
 </script>
