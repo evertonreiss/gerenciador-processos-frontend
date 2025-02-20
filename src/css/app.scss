@@ -1,1 +1,24 @@
 // app global css in SCSS form
+@use "sass:color";
+@import 'src/css/quasar.variables';
+
+.rounded {
+  border-radius: 8px
+}
+
+.bg-light {
+  background-color: $light;
+}
+
+.dark-text {
+  color: $dark;
+}
+
+.text-gray {
+  color: color.adjust($gray, $lightness: -50%);
+}
+
+.q-tooltip {
+  font-weight: bold;
+  font-size: 0.8rem;
+}
