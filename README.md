@@ -19,7 +19,8 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 ### 1️⃣ **Pré-requisitos**
 Antes de rodar o projeto, certifique-se de ter instalado:
 
-- **Node.js** (versão recomendada: 16 ou superior)
+- **Docker**
+- **Docker Compose**
 
 ### 2️⃣ **Clonar o Repositório**
 ```sh
@@ -27,25 +28,9 @@ git clone https://github.com/evertonreiss/gerenciador-processos-frontend.git
 cd gerenciador-processos-frontend
 ```
 
-### 3️⃣ **Instalar Dependências**
+### 3️⃣ **Executando com Docker Compose**
 ```sh
-npm install
-```
-
-### 4️⃣ **Configurar Variáveis de Ambiente**
-O projeto já inclui um arquivo `.env` com as seguintes configurações padrão:
-
-```env
-VITE_CADASTRO_SERVICE_BASE_URL=http://localhost:8081/cadastro-service
-VITE_PROCESSO_SERVICE_BASE_URL=http://localhost:8082/processo-service
-VITE_APP_PORT=9090
-```
-
-Se necessário, modifique os valores conforme seu ambiente.
-
-### 5️⃣ **Executar o Servidor**
-```sh
-quasar dev
+docker-compose up --build -d
 ```
 
 O projeto será iniciado e estará acessível em **http://localhost:9090**.
