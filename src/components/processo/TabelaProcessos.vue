@@ -49,6 +49,7 @@ const redirecionar = (mode: string, id: number) => router.push({
     separator="cell"
     table-header-class="bg-primary text-white text-weight-bolder text-uppercase"
     v-model:pagination="pagination"
+    @request="$emit('request')"
   >
     <template #top-right>
       <q-btn

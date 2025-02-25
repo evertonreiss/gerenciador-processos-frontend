@@ -19,16 +19,18 @@ const paginacao: Ref<Paginacao> = ref({
   sortBy: 'desc',
   descending: false,
   page: 0,
-  rowsPerPage: 5,
+  size: 5,
   rowsNumber: 1
 })
 
 const listarTiposProcessos = async ({ pagination }: any = {}) => {
   loading.value = true
   if(pagination) paginacao.value = pagination
-
+  console.log(pagination, paginacao.value)
   const filtros = {
-    ...filtro.value
+    size: paginacao.value.size,
+    page: paginacao.value.page -1,
+    ...filtro.value,
   }
 
   const { content, totalElements } = await processoStore.list(filtros)
