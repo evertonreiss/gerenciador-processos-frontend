@@ -37,7 +37,7 @@ export interface Paginacao {
   sortBy: 'desc' | 'asc',
   descending: boolean,
   page: number,
-  size: number,
+  rowsPerPage: number,
   rowsNumber: number
 }
 
