@@ -60,7 +60,7 @@ const voltarPagina = () => router.back();
     <q-breadcrumbs class="q-mb-md text-subtitle1">
       <q-breadcrumbs-el label="Início" :to="{ name: 'home' }" />
 
-      <q-breadcrumbs-el label="Processo" :to="{ name: 'tutor-listagem' }" />
+      <q-breadcrumbs-el label="Tipos Processos" :to="{ name: 'tipos-processos-listagem' }" />
 
       <q-breadcrumbs-el :label="modo" />
 

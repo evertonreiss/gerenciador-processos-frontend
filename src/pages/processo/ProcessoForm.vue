@@ -89,7 +89,7 @@ onMounted(carregarPaginaHook)
 
       <q-breadcrumbs-el label="Início" :to="{ name: 'home' }" />
 
-      <q-breadcrumbs-el label="Processo" :to="{ name: 'tutor-listagem' }" />
+      <q-breadcrumbs-el label="Processos" :to="{ name: 'processos-listagem' }" />
 
       <q-breadcrumbs-el :label="modo" />
 
