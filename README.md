@@ -2,7 +2,7 @@
 
 Veredictum é o frontend desenvolvido com **Quasar Framework** para gerenciar processos e seus tipos. Ele consome APIs de microserviços para realizar operações como **cadastrar, editar, visualizar e excluir** processos e tipos de processos.
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
 
@@ -14,7 +14,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias:
 - [dotenv](https://www.npmjs.com/package/dotenv) - Gerenciamento de variáveis de ambiente
 - [QCurrency](https://quasar.dev/) - Componente de input de moeda no Quasar
 
-## 🛠️ Configuração e Execução
+## Configuração e Execução
 
 ### 1️⃣ **Pré-requisitos**
 Antes de rodar o projeto, certifique-se de ter instalado:
