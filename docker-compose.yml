@@ -1,0 +1,15 @@
+services:
+  veredictum:
+    container_name: veredictum
+    build: .
+    ports:
+      - "9090:${VITE_APP_PORT}"
+    environment:
+      - VITE_CADASTRO_SERVICE_BASE_URL=http://cadastro-service:8081/cadastro-service
+      - VITE_PROCESSO_SERVICE_BASE_URL=http://processo-service:8082/processo-service
+    networks:
+      - processos-network
+
+networks:
+  processos-network:
+    external: true

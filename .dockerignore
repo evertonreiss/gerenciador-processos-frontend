@@ -1,0 +1,7 @@
+node_modules
+.quasar
+.vscode
+.idea
+.git
+.gitignore
+.npmrc
