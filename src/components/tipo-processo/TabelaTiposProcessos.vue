@@ -49,6 +49,7 @@ const redirecionar = (mode: string, id: number) => router.push({
     class="rounded"
     separator="cell"
     table-header-class="bg-primary text-white text-weight-bolder text-uppercase"
+    @request="$emit('request')"
   >
     <template #top-right>
       <q-btn
@@ -66,7 +67,7 @@ const redirecionar = (mode: string, id: number) => router.push({
             <q-tooltip anchor="top middle" self="bottom middle">Editar</q-tooltip>
           </q-btn>
           <q-btn icon="fa-solid fa-trash" color="negative" dense @click="dialogConfirmar(row.id, row.nome)">
-            <q-tooltip anchor="top middle" self="bottom middle">Editar</q-tooltip>
+            <q-tooltip anchor="top middle" self="bottom middle">Excluir</q-tooltip>
           </q-btn>
         </div>
       </q-td>

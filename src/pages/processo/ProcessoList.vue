@@ -19,7 +19,7 @@ const paginacao: Ref<Paginacao> = ref({
   sortBy: 'desc',
   descending: false,
   page: 0,
-  rowsPerPage: 5,
+  size: 5,
   rowsNumber: 1
 })
 
@@ -28,6 +28,8 @@ const listarProcessos = async ({ pagination }: any = {}) => {
   if(pagination) paginacao.value = pagination
 
   const filtros = {
+    size: paginacao.value.size,
+    page: paginacao.value.page -1,
     ...filtro.value
   }
 
