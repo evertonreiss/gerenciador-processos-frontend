@@ -2,6 +2,8 @@
 
 Veredictum é o frontend desenvolvido com **Quasar Framework** para gerenciar processos e seus tipos. Ele consome APIs de microserviços para realizar operações como **cadastrar, editar, visualizar e excluir** processos e tipos de processos.
 
+API disponível em https://github.com/evertonreiss/gerenciador-processos-backend
+
 ## Tecnologias Utilizadas
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias:
